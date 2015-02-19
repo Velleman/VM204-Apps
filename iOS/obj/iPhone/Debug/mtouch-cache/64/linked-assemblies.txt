@@ -1,0 +1,11 @@
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/Xamarin.Forms.Platform.iOS.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/System.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/System.Xml.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/VM204.iOS.exe
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/Xamarin.iOS.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/System.Core.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/Mono.Dynamic.Interpreter.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/System.Net.Http.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/Xamarin.Forms.Core.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/mscorlib.dll
+/Users/Administrator/VM204/iOS/obj/iPhone/Debug/mtouch-cache/64/Link/System.Runtime.Serialization.dll

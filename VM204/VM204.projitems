@@ -3,23 +3,35 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{CA6EDFA2-2EF4-42C7-BF2B-4BE1CBB64A3F}</SharedGUID>
+    <SharedGUID>{2885F500-91BE-4981-92EC-1DC7A688DD28}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>VM204</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Discovery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RelayCard.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\RelayCardDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RelayCardDiscovery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DiscoveryCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PullToRefreshListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardDiscoveryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DiscoveryFoundEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DiscoveryScanner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\RelayCardDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\UdpState.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Views\.DS_Store" />
   </ItemGroup>
 </Project>

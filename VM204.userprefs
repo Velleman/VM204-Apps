@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="iOS/VM204.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.R&amp;D Velleman" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VM204/App.cs">
+    <Files>
+      <File FileName="iOS/AppDelegate.cs" Line="3" Column="3" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="VM204/App.cs" Line="12" Column="12" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
