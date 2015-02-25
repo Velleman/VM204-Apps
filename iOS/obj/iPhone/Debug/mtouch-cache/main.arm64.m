@@ -1,30 +1,34 @@
 #include "xamarin/xamarin.h"
 
 extern void *mono_aot_module_VM204_iOS_info;
-extern void *mono_aot_module_Xamarin_Forms_Core_info;
-extern void *mono_aot_module_mscorlib_info;
-extern void *mono_aot_module_System_Core_info;
 extern void *mono_aot_module_System_info;
+extern void *mono_aot_module_mscorlib_info;
 extern void *mono_aot_module_System_Xml_info;
+extern void *mono_aot_module_Xamarin_Forms_Core_info;
+extern void *mono_aot_module_System_Core_info;
 extern void *mono_aot_module_Mono_Dynamic_Interpreter_info;
 extern void *mono_aot_module_Xamarin_iOS_info;
 extern void *mono_aot_module_Xamarin_Forms_Platform_iOS_info;
 extern void *mono_aot_module_System_Net_Http_info;
 extern void *mono_aot_module_System_Runtime_Serialization_info;
+extern void *mono_aot_module_Xamarin_Insights_info;
+extern void *mono_aot_module_PLCrashReporterUnifiedBinding_info;
 
 void xamarin_register_modules ()
 {
 	mono_aot_register_module (mono_aot_module_VM204_iOS_info);
-	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Core_info);
-	mono_aot_register_module (mono_aot_module_mscorlib_info);
-	mono_aot_register_module (mono_aot_module_System_Core_info);
 	mono_aot_register_module (mono_aot_module_System_info);
+	mono_aot_register_module (mono_aot_module_mscorlib_info);
 	mono_aot_register_module (mono_aot_module_System_Xml_info);
+	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Core_info);
+	mono_aot_register_module (mono_aot_module_System_Core_info);
 	mono_aot_register_module (mono_aot_module_Mono_Dynamic_Interpreter_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_iOS_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Platform_iOS_info);
 	mono_aot_register_module (mono_aot_module_System_Net_Http_info);
 	mono_aot_register_module (mono_aot_module_System_Runtime_Serialization_info);
+	mono_aot_register_module (mono_aot_module_Xamarin_Insights_info);
+	mono_aot_register_module (mono_aot_module_PLCrashReporterUnifiedBinding_info);
 
 }
 
@@ -32,6 +36,7 @@ void xamarin_register_assemblies ()
 {
 	xamarin_open_and_register ("Xamarin.iOS.dll");
 	xamarin_open_and_register ("Xamarin.Forms.Platform.iOS.dll");
+	xamarin_open_and_register ("PLCrashReporterUnifiedBinding.dll");
 
 }
 

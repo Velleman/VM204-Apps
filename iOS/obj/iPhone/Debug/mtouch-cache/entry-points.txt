@@ -1,3 +1,5 @@
+PLCrashReporterErrorDomain
+PLCrashReporterException
 CreateZStream
 CloseZStream
 Flush

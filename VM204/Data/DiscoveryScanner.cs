@@ -7,6 +7,7 @@ using System.Text;
 using System.IO;
 using System.Timers;
 using System.Diagnostics;
+using Xamarin;
 
 namespace VM204
 {
@@ -24,6 +25,7 @@ namespace VM204
 				{
 					using (var udpClient = new UdpClient(30303))
 					{
+						try{
 						string loggingEvent = "";
 						var bytes = System.Text.Encoding.UTF8.GetBytes("VM204,Knock Knock\r\n");
 						udpClient.EnableBroadcast = true;
@@ -50,6 +52,11 @@ namespace VM204
 							}
 						}
 						stopwatch.Stop();
+						}
+						catch (Exception e)
+						{
+							Insights.Report(e);
+						}
 					}
 				});
 		}
@@ -67,7 +74,7 @@ namespace VM204
 			var yes = sr.ReadLine ();
 			if (yes == "Yes?") {
 				discovery.IP = endPoint.Address.ToString();
-				discovery.Webport = Convert.ToInt32(sr.ReadLine ());
+				discovery.WebPort = Convert.ToInt32(sr.ReadLine ());
 				discovery.Name = sr.ReadLine ();
 				discovery.MacAddress = sr.ReadLine ();
 				discovery.Version = sr.ReadLine ();

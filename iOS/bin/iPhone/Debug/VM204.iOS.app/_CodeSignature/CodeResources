@@ -6,163 +6,179 @@
 	<dict>
 		<key>.monotouch-32/Mono.Dynamic.Interpreter.dll</key>
 		<data>
-		Fj685wzQi8vMQNH0osrMVI5EWfg=
+		kb8+SWiQsV/q4bSLml/JUx73v3s=
 		</data>
 		<key>.monotouch-32/Mono.Dynamic.Interpreter.dll.mdb</key>
 		<data>
-		eKjcmZ7rfeXcomrU3niorh7US/U=
+		WekOS182Ft4zjcfcMiJ+Pl1aKXI=
+		</data>
+		<key>.monotouch-32/PLCrashReporterUnifiedBinding.dll</key>
+		<data>
+		9jRU8QhfKAN0LDRJHqTAgzmiOEA=
 		</data>
 		<key>.monotouch-32/System.Core.dll</key>
 		<data>
-		/9vX5x3cA6rSx/dE6qXdJ0CSuJU=
+		jp+mJUEM1xjX6EGo8k2ruLr5mEg=
 		</data>
 		<key>.monotouch-32/System.Core.dll.mdb</key>
 		<data>
-		7mL0S9UHQ5hRSgpUBH22fIA5h3k=
+		9TVC5IkQYm6qFUbTxZc5tNP50ms=
 		</data>
 		<key>.monotouch-32/System.Net.Http.dll</key>
 		<data>
-		iKPh2ZyWW8p897lf9o8JjBuuHgw=
+		GeX4rZ1NINJWQOxcdZoDtzWhvmk=
 		</data>
 		<key>.monotouch-32/System.Net.Http.dll.mdb</key>
 		<data>
-		JmOhczPRVNPdvsQFOAMgknIx6VQ=
+		AFvRAjOcIgO8GdaD4pQWSbGCJKg=
 		</data>
 		<key>.monotouch-32/System.Runtime.Serialization.dll</key>
 		<data>
-		NqsPSrg42xv0KQZFgDzCwpMxaRI=
+		HHCG94rKBEALmVqXdAlMeMB553Q=
 		</data>
 		<key>.monotouch-32/System.Runtime.Serialization.dll.mdb</key>
 		<data>
-		mciTSH0jAM4YpYZXAgAEaID8lac=
+		KC6udlozWt6dt+upl/iUbbtYgbY=
 		</data>
 		<key>.monotouch-32/System.Xml.dll</key>
 		<data>
-		yJBDoJdyzvsbs3Qxe4dD48hUTig=
+		FaHGtlQryZrkpe661ieUwXKEIsw=
 		</data>
 		<key>.monotouch-32/System.Xml.dll.mdb</key>
 		<data>
-		LVY8ToIJz95JcRIYbyUWe1T4bi4=
+		Tl68nU/8wdtFOr+gnGo+GVT87uA=
 		</data>
 		<key>.monotouch-32/System.dll</key>
 		<data>
-		e50Zv72yox+iWko/qbv4uz6E+vw=
+		2iPPc7on1U9Hq9YLtbV8v3X15rQ=
 		</data>
 		<key>.monotouch-32/System.dll.mdb</key>
 		<data>
-		pfVFoBKaAjzZKjuv1qYuTuGlj+Y=
+		S6uzgn4e8L8jKZMNn7DoAb/Lx2g=
 		</data>
 		<key>.monotouch-32/VM204.iOS.exe</key>
 		<data>
-		utwaE5FMK1BDxCz3odKTZz+JYOs=
+		YOKCksY6LOAAwSou2Qc+T/QU0gM=
 		</data>
 		<key>.monotouch-32/VM204.iOS.exe.mdb</key>
 		<data>
-		NlK4HW6zSG/Du2AmPoLT2Zl2T6s=
+		Pb1/DZBIZm0N9heKHX9ceQ3qvEo=
 		</data>
 		<key>.monotouch-32/Xamarin.Forms.Core.dll</key>
 		<data>
-		QOldnhh7fgSFwQc6ruY2kcje9Pg=
+		ug2Vn6QKx05hoC16/nFsVL1aZo8=
 		</data>
 		<key>.monotouch-32/Xamarin.Forms.Platform.iOS.dll</key>
 		<data>
 		1NS9yop3ehEJ1Grwz3eLl7NDSDk=
 		</data>
+		<key>.monotouch-32/Xamarin.Insights.dll</key>
+		<data>
+		MZIziSHVIjcyUCDGh5+Rz6dngIg=
+		</data>
 		<key>.monotouch-32/Xamarin.iOS.dll</key>
 		<data>
-		D35RwTKDvQUDYnwMTHLhgbo7TnY=
+		7LVzHBeQ8Ogu5JxRVP7UsFACd9A=
 		</data>
 		<key>.monotouch-32/Xamarin.iOS.dll.mdb</key>
 		<data>
-		VryK5Ree0OWF4zZKfRpQ4rG735g=
+		rILUbuOzGjJf+J9Xd4IfNm9NsgI=
 		</data>
 		<key>.monotouch-32/mscorlib.dll</key>
 		<data>
-		5rbmOuOle3bCGXXqtPcE/mRBQLU=
+		LsnFyXJCjrSJnFUJ6dXNM8q+ogM=
 		</data>
 		<key>.monotouch-32/mscorlib.dll.mdb</key>
 		<data>
-		UfZDkMLZ1Ip7lYNfG66+YVmffQs=
+		dgSpRgJ78/MGVwvRm2CsjHhIMGI=
 		</data>
 		<key>.monotouch-64/Mono.Dynamic.Interpreter.dll</key>
 		<data>
-		xMRzX4jov652q3IReHAql2g9/Q8=
+		+SxzJfLyplI4wT7M4Q0gsc9aUac=
 		</data>
 		<key>.monotouch-64/Mono.Dynamic.Interpreter.dll.mdb</key>
 		<data>
-		THjFoFeRUIXaFJPhxUIZ0XTnZXU=
+		bsThuN+TIv/h3N+V/ANqCcYmpRA=
+		</data>
+		<key>.monotouch-64/PLCrashReporterUnifiedBinding.dll</key>
+		<data>
+		yJeq5m3KgUjUP66gBk0dpfRonp4=
 		</data>
 		<key>.monotouch-64/System.Core.dll</key>
 		<data>
-		it3Zg9Q5f40gI7Pto9MlvGmTj3Q=
+		+TJ3Gvu1/DjrxZta+d8FhJ55ie0=
 		</data>
 		<key>.monotouch-64/System.Core.dll.mdb</key>
 		<data>
-		phWSIHXGwJyWWt6NQtZlhfGNuFg=
+		e5FUXP37pfkKGlJohrvZS1mWK/A=
 		</data>
 		<key>.monotouch-64/System.Net.Http.dll</key>
 		<data>
-		ze1Q0Ym8K9kDGlZH6rUizLR5SP4=
+		kOvmjyMTNje8M06CylNtOOpMkT0=
 		</data>
 		<key>.monotouch-64/System.Net.Http.dll.mdb</key>
 		<data>
-		YK+PopgfzFkiXIt42gVVpQTzTws=
+		RsiRwCPn5MfhcsosuPQurca5BY8=
 		</data>
 		<key>.monotouch-64/System.Runtime.Serialization.dll</key>
 		<data>
-		JTHEwi9PZsK/pmMR2Pb/5lFh3vQ=
+		2fFSADey/iUeNAethvh4XrxO+r4=
 		</data>
 		<key>.monotouch-64/System.Runtime.Serialization.dll.mdb</key>
 		<data>
-		Exk/4/COM9IYQ+hKFG36snKhVSM=
+		bkwAi2Bbr5UyBrAhe7Yw2/5BcyY=
 		</data>
 		<key>.monotouch-64/System.Xml.dll</key>
 		<data>
-		5JImoqDcWTR0DS6mdig48d6NUPU=
+		n2Z5zWmi/UTTAz1n/okGce0vKYQ=
 		</data>
 		<key>.monotouch-64/System.Xml.dll.mdb</key>
 		<data>
-		XuD7C14H9c0SBpIHkQ1o6/XABB4=
+		fjT9/PdbqTcFRiyYIvoRoNzhSiE=
 		</data>
 		<key>.monotouch-64/System.dll</key>
 		<data>
-		bqQ6vFsnApT+7HN1fxRzvuV1an4=
+		y1a0gnX5G27Z9meDwaL2LBP5GOc=
 		</data>
 		<key>.monotouch-64/System.dll.mdb</key>
 		<data>
-		TDr5vsChv1Y2yWrKicf1N7bs+7s=
+		Z+/fWYkojYNwTV7MQNeEOqt8Udo=
 		</data>
 		<key>.monotouch-64/VM204.iOS.exe</key>
 		<data>
-		utwaE5FMK1BDxCz3odKTZz+JYOs=
+		YOKCksY6LOAAwSou2Qc+T/QU0gM=
 		</data>
 		<key>.monotouch-64/VM204.iOS.exe.mdb</key>
 		<data>
-		NlK4HW6zSG/Du2AmPoLT2Zl2T6s=
+		Pb1/DZBIZm0N9heKHX9ceQ3qvEo=
 		</data>
 		<key>.monotouch-64/Xamarin.Forms.Core.dll</key>
 		<data>
-		/vo/xqGR5gRV8IcM3s370txrvpY=
+		JQwc7Dr0cGrJ5bqaOFjEcp105uI=
 		</data>
 		<key>.monotouch-64/Xamarin.Forms.Platform.iOS.dll</key>
 		<data>
 		1NS9yop3ehEJ1Grwz3eLl7NDSDk=
 		</data>
+		<key>.monotouch-64/Xamarin.Insights.dll</key>
+		<data>
+		MZIziSHVIjcyUCDGh5+Rz6dngIg=
+		</data>
 		<key>.monotouch-64/Xamarin.iOS.dll</key>
 		<data>
-		kajkJ0kBjCRX6nT7QEX1U6sxls8=
+		t2ZWLMHI9g7NsUBJTh1JWpfmU6A=
 		</data>
 		<key>.monotouch-64/Xamarin.iOS.dll.mdb</key>
 		<data>
-		Zjrhgio7JKPF7kr8TOAzavL320k=
+		fDNY6xtinA7CwzVlINSJBy1jVdc=
 		</data>
 		<key>.monotouch-64/mscorlib.dll</key>
 		<data>
-		AIvza4yEvsL4p7oGSckk/4n4O0E=
+		hVS+B5wtgvQ5b0bIVGBXtkjmamQ=
 		</data>
 		<key>.monotouch-64/mscorlib.dll.mdb</key>
 		<data>
-		cBcYkWJPhy9sEuhpwb3vyXnMgS0=
+		VWaSJxz7XYBhZ3qM7B5ZcSZ0YNE=
 		</data>
 		<key>Default-568h@2x.png</key>
 		<data>
@@ -230,19 +246,19 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib/objects-8.0+.nib</key>
 		<data>
-		sYLZXkFDbE+591pRjg7lXwtP/3M=
+		mBDT7pY2rxK5nhURTxNV30pkgVc=
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib/runtime.nib</key>
 		<data>
-		6g1TqqJ5ZUNdjMMcgRGr5ZzCGb4=
+		2JAHtK8NlhYrVvbxW1gPVKoHBaI=
 		</data>
 		<key>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib/objects-8.0+.nib</key>
 		<data>
-		iHJ00v51MqQTVOf46ExHnA7DEWw=
+		IJWgaR1sxY0qc5TlGw3AKhWhwbU=
 		</data>
 		<key>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib/runtime.nib</key>
 		<data>
-		B3cgQamMbyH3HjXp6RxvRX/lME8=
+		18M66sIffT+OPqUqmq1HVjioBIQ=
 		</data>
 		<key>MonoTouchDebugConfiguration.txt</key>
 		<data>
@@ -285,163 +301,179 @@
 	<dict>
 		<key>.monotouch-32/Mono.Dynamic.Interpreter.dll</key>
 		<data>
-		Fj685wzQi8vMQNH0osrMVI5EWfg=
+		kb8+SWiQsV/q4bSLml/JUx73v3s=
 		</data>
 		<key>.monotouch-32/Mono.Dynamic.Interpreter.dll.mdb</key>
 		<data>
-		eKjcmZ7rfeXcomrU3niorh7US/U=
+		WekOS182Ft4zjcfcMiJ+Pl1aKXI=
+		</data>
+		<key>.monotouch-32/PLCrashReporterUnifiedBinding.dll</key>
+		<data>
+		9jRU8QhfKAN0LDRJHqTAgzmiOEA=
 		</data>
 		<key>.monotouch-32/System.Core.dll</key>
 		<data>
-		/9vX5x3cA6rSx/dE6qXdJ0CSuJU=
+		jp+mJUEM1xjX6EGo8k2ruLr5mEg=
 		</data>
 		<key>.monotouch-32/System.Core.dll.mdb</key>
 		<data>
-		7mL0S9UHQ5hRSgpUBH22fIA5h3k=
+		9TVC5IkQYm6qFUbTxZc5tNP50ms=
 		</data>
 		<key>.monotouch-32/System.Net.Http.dll</key>
 		<data>
-		iKPh2ZyWW8p897lf9o8JjBuuHgw=
+		GeX4rZ1NINJWQOxcdZoDtzWhvmk=
 		</data>
 		<key>.monotouch-32/System.Net.Http.dll.mdb</key>
 		<data>
-		JmOhczPRVNPdvsQFOAMgknIx6VQ=
+		AFvRAjOcIgO8GdaD4pQWSbGCJKg=
 		</data>
 		<key>.monotouch-32/System.Runtime.Serialization.dll</key>
 		<data>
-		NqsPSrg42xv0KQZFgDzCwpMxaRI=
+		HHCG94rKBEALmVqXdAlMeMB553Q=
 		</data>
 		<key>.monotouch-32/System.Runtime.Serialization.dll.mdb</key>
 		<data>
-		mciTSH0jAM4YpYZXAgAEaID8lac=
+		KC6udlozWt6dt+upl/iUbbtYgbY=
 		</data>
 		<key>.monotouch-32/System.Xml.dll</key>
 		<data>
-		yJBDoJdyzvsbs3Qxe4dD48hUTig=
+		FaHGtlQryZrkpe661ieUwXKEIsw=
 		</data>
 		<key>.monotouch-32/System.Xml.dll.mdb</key>
 		<data>
-		LVY8ToIJz95JcRIYbyUWe1T4bi4=
+		Tl68nU/8wdtFOr+gnGo+GVT87uA=
 		</data>
 		<key>.monotouch-32/System.dll</key>
 		<data>
-		e50Zv72yox+iWko/qbv4uz6E+vw=
+		2iPPc7on1U9Hq9YLtbV8v3X15rQ=
 		</data>
 		<key>.monotouch-32/System.dll.mdb</key>
 		<data>
-		pfVFoBKaAjzZKjuv1qYuTuGlj+Y=
+		S6uzgn4e8L8jKZMNn7DoAb/Lx2g=
 		</data>
 		<key>.monotouch-32/VM204.iOS.exe</key>
 		<data>
-		utwaE5FMK1BDxCz3odKTZz+JYOs=
+		YOKCksY6LOAAwSou2Qc+T/QU0gM=
 		</data>
 		<key>.monotouch-32/VM204.iOS.exe.mdb</key>
 		<data>
-		NlK4HW6zSG/Du2AmPoLT2Zl2T6s=
+		Pb1/DZBIZm0N9heKHX9ceQ3qvEo=
 		</data>
 		<key>.monotouch-32/Xamarin.Forms.Core.dll</key>
 		<data>
-		QOldnhh7fgSFwQc6ruY2kcje9Pg=
+		ug2Vn6QKx05hoC16/nFsVL1aZo8=
 		</data>
 		<key>.monotouch-32/Xamarin.Forms.Platform.iOS.dll</key>
 		<data>
 		1NS9yop3ehEJ1Grwz3eLl7NDSDk=
 		</data>
+		<key>.monotouch-32/Xamarin.Insights.dll</key>
+		<data>
+		MZIziSHVIjcyUCDGh5+Rz6dngIg=
+		</data>
 		<key>.monotouch-32/Xamarin.iOS.dll</key>
 		<data>
-		D35RwTKDvQUDYnwMTHLhgbo7TnY=
+		7LVzHBeQ8Ogu5JxRVP7UsFACd9A=
 		</data>
 		<key>.monotouch-32/Xamarin.iOS.dll.mdb</key>
 		<data>
-		VryK5Ree0OWF4zZKfRpQ4rG735g=
+		rILUbuOzGjJf+J9Xd4IfNm9NsgI=
 		</data>
 		<key>.monotouch-32/mscorlib.dll</key>
 		<data>
-		5rbmOuOle3bCGXXqtPcE/mRBQLU=
+		LsnFyXJCjrSJnFUJ6dXNM8q+ogM=
 		</data>
 		<key>.monotouch-32/mscorlib.dll.mdb</key>
 		<data>
-		UfZDkMLZ1Ip7lYNfG66+YVmffQs=
+		dgSpRgJ78/MGVwvRm2CsjHhIMGI=
 		</data>
 		<key>.monotouch-64/Mono.Dynamic.Interpreter.dll</key>
 		<data>
-		xMRzX4jov652q3IReHAql2g9/Q8=
+		+SxzJfLyplI4wT7M4Q0gsc9aUac=
 		</data>
 		<key>.monotouch-64/Mono.Dynamic.Interpreter.dll.mdb</key>
 		<data>
-		THjFoFeRUIXaFJPhxUIZ0XTnZXU=
+		bsThuN+TIv/h3N+V/ANqCcYmpRA=
+		</data>
+		<key>.monotouch-64/PLCrashReporterUnifiedBinding.dll</key>
+		<data>
+		yJeq5m3KgUjUP66gBk0dpfRonp4=
 		</data>
 		<key>.monotouch-64/System.Core.dll</key>
 		<data>
-		it3Zg9Q5f40gI7Pto9MlvGmTj3Q=
+		+TJ3Gvu1/DjrxZta+d8FhJ55ie0=
 		</data>
 		<key>.monotouch-64/System.Core.dll.mdb</key>
 		<data>
-		phWSIHXGwJyWWt6NQtZlhfGNuFg=
+		e5FUXP37pfkKGlJohrvZS1mWK/A=
 		</data>
 		<key>.monotouch-64/System.Net.Http.dll</key>
 		<data>
-		ze1Q0Ym8K9kDGlZH6rUizLR5SP4=
+		kOvmjyMTNje8M06CylNtOOpMkT0=
 		</data>
 		<key>.monotouch-64/System.Net.Http.dll.mdb</key>
 		<data>
-		YK+PopgfzFkiXIt42gVVpQTzTws=
+		RsiRwCPn5MfhcsosuPQurca5BY8=
 		</data>
 		<key>.monotouch-64/System.Runtime.Serialization.dll</key>
 		<data>
-		JTHEwi9PZsK/pmMR2Pb/5lFh3vQ=
+		2fFSADey/iUeNAethvh4XrxO+r4=
 		</data>
 		<key>.monotouch-64/System.Runtime.Serialization.dll.mdb</key>
 		<data>
-		Exk/4/COM9IYQ+hKFG36snKhVSM=
+		bkwAi2Bbr5UyBrAhe7Yw2/5BcyY=
 		</data>
 		<key>.monotouch-64/System.Xml.dll</key>
 		<data>
-		5JImoqDcWTR0DS6mdig48d6NUPU=
+		n2Z5zWmi/UTTAz1n/okGce0vKYQ=
 		</data>
 		<key>.monotouch-64/System.Xml.dll.mdb</key>
 		<data>
-		XuD7C14H9c0SBpIHkQ1o6/XABB4=
+		fjT9/PdbqTcFRiyYIvoRoNzhSiE=
 		</data>
 		<key>.monotouch-64/System.dll</key>
 		<data>
-		bqQ6vFsnApT+7HN1fxRzvuV1an4=
+		y1a0gnX5G27Z9meDwaL2LBP5GOc=
 		</data>
 		<key>.monotouch-64/System.dll.mdb</key>
 		<data>
-		TDr5vsChv1Y2yWrKicf1N7bs+7s=
+		Z+/fWYkojYNwTV7MQNeEOqt8Udo=
 		</data>
 		<key>.monotouch-64/VM204.iOS.exe</key>
 		<data>
-		utwaE5FMK1BDxCz3odKTZz+JYOs=
+		YOKCksY6LOAAwSou2Qc+T/QU0gM=
 		</data>
 		<key>.monotouch-64/VM204.iOS.exe.mdb</key>
 		<data>
-		NlK4HW6zSG/Du2AmPoLT2Zl2T6s=
+		Pb1/DZBIZm0N9heKHX9ceQ3qvEo=
 		</data>
 		<key>.monotouch-64/Xamarin.Forms.Core.dll</key>
 		<data>
-		/vo/xqGR5gRV8IcM3s370txrvpY=
+		JQwc7Dr0cGrJ5bqaOFjEcp105uI=
 		</data>
 		<key>.monotouch-64/Xamarin.Forms.Platform.iOS.dll</key>
 		<data>
 		1NS9yop3ehEJ1Grwz3eLl7NDSDk=
 		</data>
+		<key>.monotouch-64/Xamarin.Insights.dll</key>
+		<data>
+		MZIziSHVIjcyUCDGh5+Rz6dngIg=
+		</data>
 		<key>.monotouch-64/Xamarin.iOS.dll</key>
 		<data>
-		kajkJ0kBjCRX6nT7QEX1U6sxls8=
+		t2ZWLMHI9g7NsUBJTh1JWpfmU6A=
 		</data>
 		<key>.monotouch-64/Xamarin.iOS.dll.mdb</key>
 		<data>
-		Zjrhgio7JKPF7kr8TOAzavL320k=
+		fDNY6xtinA7CwzVlINSJBy1jVdc=
 		</data>
 		<key>.monotouch-64/mscorlib.dll</key>
 		<data>
-		AIvza4yEvsL4p7oGSckk/4n4O0E=
+		hVS+B5wtgvQ5b0bIVGBXtkjmamQ=
 		</data>
 		<key>.monotouch-64/mscorlib.dll.mdb</key>
 		<data>
-		cBcYkWJPhy9sEuhpwb3vyXnMgS0=
+		VWaSJxz7XYBhZ3qM7B5ZcSZ0YNE=
 		</data>
 		<key>Default-568h@2x.png</key>
 		<data>
@@ -509,19 +541,19 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib/objects-8.0+.nib</key>
 		<data>
-		sYLZXkFDbE+591pRjg7lXwtP/3M=
+		mBDT7pY2rxK5nhURTxNV30pkgVc=
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib/runtime.nib</key>
 		<data>
-		6g1TqqJ5ZUNdjMMcgRGr5ZzCGb4=
+		2JAHtK8NlhYrVvbxW1gPVKoHBaI=
 		</data>
 		<key>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib/objects-8.0+.nib</key>
 		<data>
-		iHJ00v51MqQTVOf46ExHnA7DEWw=
+		IJWgaR1sxY0qc5TlGw3AKhWhwbU=
 		</data>
 		<key>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib/runtime.nib</key>
 		<data>
-		B3cgQamMbyH3HjXp6RxvRX/lME8=
+		18M66sIffT+OPqUqmq1HVjioBIQ=
 		</data>
 		<key>MonoTouchDebugConfiguration.txt</key>
 		<data>

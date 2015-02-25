@@ -14,7 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\RelayCard.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RelayCardDiscovery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DiscoveryCell.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\PullToRefreshListView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardDiscoveryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RelayCardListPage.cs" />
@@ -30,8 +29,5 @@
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Views\.DS_Store" />
   </ItemGroup>
 </Project>

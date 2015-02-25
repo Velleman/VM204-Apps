@@ -38,6 +38,12 @@ namespace VM204
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+			RefreshList ();
+		}
+
+		public void RefreshList()
+		{
+			listView.ItemsSource = null;
 			listView.ItemsSource = App.Database.GetItems ();
 		}
 	}

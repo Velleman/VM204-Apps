@@ -47,8 +47,10 @@ namespace VM204
 			var scanButton = new Button { Text = "Scan" };
 			scanButton.Clicked += (object sender, EventArgs e) => {
 				var discoveryPage = new RelayCardDiscoveryPage ();
-				discoveryPage.GetCards ();
-				this.Navigation.PushAsync(new RelayCardDiscoveryPage());
+
+				discoveryPage.BindingContext = BindingContext;
+
+				Navigation.PushAsync(discoveryPage);
 			};
 
 			var saveButton = new Button { Text = "Save" };
@@ -57,14 +59,7 @@ namespace VM204
 				App.Database.SaveItem(relayCard);
 				this.Navigation.PopAsync();
 			};
-
-			var deleteButton = new Button { Text = "Delete" };
-			deleteButton.Clicked += (sender, e) => {
-				var relayCard = (RelayCard)BindingContext;
-				App.Database.DeleteItem(relayCard.ID);
-				this.Navigation.PopAsync();
-			};
-
+				
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => this.Navigation.PopAsync ();
 
@@ -85,7 +80,7 @@ namespace VM204
 						HorizontalOptions = LayoutOptions.CenterAndExpand,
 						Spacing = 50,
 						Children={
-							scanButton,saveButton, deleteButton, cancelButton
+							scanButton,saveButton, cancelButton
 						}
 					}
 				}

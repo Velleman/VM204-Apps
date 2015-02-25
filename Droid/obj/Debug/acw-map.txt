@@ -78,3 +78,6 @@ Xamarin.Forms.Platform.Android.WebViewRenderer.WebClient;xamarin.forms.platform.
 Xamarin.Forms.Platform.Android.VisualElementTracker.AttachTracker;xamarin.forms.platform.android.VisualElementTracker_AttachTracker
 Xamarin.Forms.Platform.Android.PickerRenderer;xamarin.forms.platform.android.PickerRenderer
 Xamarin.Forms.Platform.Android.PickerRenderer.PickerListener;xamarin.forms.platform.android.PickerRenderer_PickerListener
+Xamarin.InsightsCore.BackgroundManager;xamarin.insightscore.BackgroundManager
+Xamarin.InsightsCore.NetworkChangeReceiver;xamarin.insightscore.NetworkChangeReceiver
+Xamarin.InsightsCore.NativeUnhandledExceptionHandler;xamarin.insightscore.NativeUnhandledExceptionHandler

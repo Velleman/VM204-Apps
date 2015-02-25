@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin;
 
 namespace VM204.iOS
 {
@@ -13,6 +14,8 @@ namespace VM204.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
+
+			Insights.Initialize ("debc89672cad1c2f0b12316c57e0af418b2b7504");
 
 			LoadApplication (new App ());
 
