@@ -47,28 +47,21 @@ namespace VM204
 			database.CreateTable<RelayCard>();
 		}
 
-		public IEnumerable<RelayCard> GetItems ()
+		public IEnumerable<RelayCard> GetCards ()
 		{
 			lock (locker) {
 				return (from i in database.Table<RelayCard>() select i).ToList();
 			}
 		}
 
-		public IEnumerable<RelayCard> GetItemsNotDone ()
-		{
-			lock (locker) {
-				return database.Query<RelayCard>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-			}
-		}
-
-		public RelayCard GetItem (int id) 
+		public RelayCard GetCard (int id) 
 		{
 			lock (locker) {
 				return database.Table<RelayCard>().FirstOrDefault(x => x.ID == id);
 			}
 		}
 
-		public int SaveItem (RelayCard item) 
+		public int SaveCard (RelayCard item) 
 		{
 			lock (locker) {
 				if (item.ID != 0) {
@@ -80,7 +73,7 @@ namespace VM204
 			}
 		}
 
-		public int DeleteItem(int id)
+		public int DeleteCard(int id)
 		{
 			lock (locker) {
 				return database.Delete<RelayCard>(id);

@@ -56,7 +56,7 @@ namespace VM204
 			var saveButton = new Button { Text = "Save" };
 			saveButton.Clicked += (sender, e) => {
 				var relayCard = (RelayCard)BindingContext;
-				App.Database.SaveItem(relayCard);
+				App.Database.SaveCard(relayCard);
 				this.Navigation.PopAsync();
 			};
 				

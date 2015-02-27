@@ -44,7 +44,7 @@ namespace VM204
 		public void RefreshList()
 		{
 			listView.ItemsSource = null;
-			listView.ItemsSource = App.Database.GetItems ();
+			listView.ItemsSource = App.Database.GetCards ();
 		}
 	}
 }

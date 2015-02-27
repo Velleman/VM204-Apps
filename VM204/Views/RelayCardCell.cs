@@ -40,7 +40,7 @@ namespace VM204
 			deleteAction.Clicked += async (sender, e) => {
 				var mi = ((MenuItem)sender);
 				
-				App.Database.DeleteItem (((RelayCard)mi.CommandParameter).ID);
+				App.Database.DeleteCard (((RelayCard)mi.CommandParameter).ID);
 				((RelayCardListPage)(((StackLayout)((ListView)(this.ParentView)).ParentView).ParentView)).RefreshList();
 			};
 				

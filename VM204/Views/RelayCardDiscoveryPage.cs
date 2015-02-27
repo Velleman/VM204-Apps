@@ -34,7 +34,15 @@ namespace VM204
 
 			listView.ItemTapped += (object sender, ItemTappedEventArgs e) => {
 				SelectedCard = (RelayCard)e.Item;
-				Navigation.NavigationStack[1].BindingContext = SelectedCard;
+
+				if(((RelayCard)Navigation.NavigationStack[1].BindingContext).ID == 0)
+					Navigation.NavigationStack[1].BindingContext = SelectedCard;
+				else
+				{
+					((RelayCard)Navigation.NavigationStack[1].BindingContext).LocalIp = SelectedCard.LocalIp;
+					((RelayCard)Navigation.NavigationStack[1].BindingContext).LocalPort = SelectedCard.LocalPort;
+					((RelayCard)Navigation.NavigationStack[1].BindingContext).ConnectLocal = true;
+				}	
 				Navigation.PopAsync(true);
 			};
 
