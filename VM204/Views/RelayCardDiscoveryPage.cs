@@ -76,10 +76,10 @@ namespace VM204
 			activityIndicator.BindingContext = scanner;
 
 			ToolbarItem tbi = new ToolbarItem ("scan",null, () => 
-				scanner.Scan (activityIndicator),
+				scanner.Scan (),
 				ToolbarItemOrder.Default,0);
 
-			scanner.Scan (activityIndicator);
+			scanner.Scan ();
 
 			this.ToolbarItems.Add (tbi);
 			var layout = new StackLayout ();

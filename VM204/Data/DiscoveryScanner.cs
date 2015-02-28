@@ -43,7 +43,7 @@ namespace VM204
 			isScanning = false;
 		}
 
-		public void Scan (ActivityIndicator ai)
+		public void Scan ()
 		{
 			Task.Run (async () => {
 				isScanning = true;
