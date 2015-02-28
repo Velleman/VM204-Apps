@@ -48,7 +48,6 @@ namespace VM204
 
 
 
-
 			discoveries = new ObservableCollection<RelayCard> ();
 			scanner = new DiscoveryScanner ();
 			scanner.DiscoveryFound += (object sender, DiscoveryFoundEventArgs e) => {
@@ -71,15 +70,22 @@ namespace VM204
 				}
 			};
 
+			var activityIndicator = new ActivityIndicator ();
+			activityIndicator.SetBinding(ActivityIndicator.IsRunningProperty,"isScanning");
+			activityIndicator.SetBinding(ActivityIndicator.IsVisibleProperty,"isScanning");
+			activityIndicator.BindingContext = scanner;
+
 			ToolbarItem tbi = new ToolbarItem ("scan",null, () => 
-				scanner.Scan (),
+				scanner.Scan (activityIndicator),
 				ToolbarItemOrder.Default,0);
 
-			scanner.Scan ();
+			scanner.Scan (activityIndicator);
 
 			this.ToolbarItems.Add (tbi);
 			var layout = new StackLayout ();
+			layout.Children.Add (activityIndicator);
 			layout.Children.Add (listView);
+
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
 

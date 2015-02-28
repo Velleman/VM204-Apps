@@ -8,57 +8,76 @@ using System.IO;
 using System.Timers;
 using System.Diagnostics;
 using Xamarin;
+using Xamarin.Forms;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace VM204
 {
-	public class DiscoveryScanner
+	public class DiscoveryScanner : INotifyPropertyChanged
 	{
 		public event EventHandler<DiscoveryFoundEventArgs> DiscoveryFound;
 
-		public DiscoveryScanner ()
-		{
+		private bool _isScanning;
+
+		public bool isScanning {
+			get { 
+				return _isScanning;
+			}
+			set {
+				if (value != _isScanning) {
+					_isScanning = value;
+					OnPropertyChanged ();
+				}
+			}
 		}
 
-		public void Scan()
+		#region INotifyPropertyChanged implementation
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		#endregion
+
+		public DiscoveryScanner ()
 		{
-			Task.Run(async () =>
-				{
-					using (var udpClient = new UdpClient(30303))
-					{
-						try{
+			isScanning = false;
+		}
+
+		public void Scan (ActivityIndicator ai)
+		{
+			Task.Run (async () => {
+				isScanning = true;
+				using (var udpClient = new UdpClient (30303)) {
+					try {
 						string loggingEvent = "";
-						var bytes = System.Text.Encoding.UTF8.GetBytes("VM204,Knock Knock\r\n");
+						var bytes = System.Text.Encoding.UTF8.GetBytes ("VM204,Knock Knock\r\n");
 						udpClient.EnableBroadcast = true;
-						var broadcastEndPoint = new IPEndPoint(IPAddress.Broadcast,30303);
-						udpClient.Send(bytes,bytes.Length,broadcastEndPoint);
-						Stopwatch stopwatch = new Stopwatch();
-						stopwatch.Start();
+						var broadcastEndPoint = new IPEndPoint (IPAddress.Broadcast, 30303);
+						udpClient.Send (bytes, bytes.Length, broadcastEndPoint);
+						Stopwatch stopwatch = new Stopwatch ();
+						stopwatch.Start ();
 						//Creates an IPEndPoint to record the IP Address and port number of the sender.  
 						// The IPEndPoint will allow you to read datagrams sent from any source.
-						IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
-						while (stopwatch.ElapsedMilliseconds <= 5000)
-						{
-							if(udpClient.Available > 0)
-							{
+						IPEndPoint RemoteIpEndPoint = new IPEndPoint (IPAddress.Any, 0);
+						while (stopwatch.ElapsedMilliseconds <= 5000) {
+							if (udpClient.Available > 0) {
 								//IPEndPoint object will allow us to read datagrams sent from any source.
-								var receivedResults = udpClient.Receive(ref RemoteIpEndPoint);
-								var result = Encoding.UTF8.GetString(receivedResults);
-								var discovery = CreateDiscovery(result,RemoteIpEndPoint);
-								if(discovery != null)
-								{
-									OnDiscoveryFound(new DiscoveryFoundEventArgs(discovery));
+								var receivedResults = udpClient.Receive (ref RemoteIpEndPoint);
+								var result = Encoding.UTF8.GetString (receivedResults);
+								var discovery = CreateDiscovery (result, RemoteIpEndPoint);
+								if (discovery != null) {
+									OnDiscoveryFound (new DiscoveryFoundEventArgs (discovery));
 								}
 								
 							}
 						}
-						stopwatch.Stop();
-						}
-						catch (Exception e)
-						{
-							Insights.Report(e);
-						}
+						stopwatch.Stop ();
+					} catch (Exception e) {
+						Insights.Report (e);
 					}
-				});
+				}
+				isScanning = false;
+			});
 		}
 
 		protected virtual void OnDiscoveryFound (DiscoveryFoundEventArgs e)
@@ -67,21 +86,28 @@ namespace VM204
 				DiscoveryFound (this, e);
 		}
 
-		private Discovery CreateDiscovery(string s,IPEndPoint endPoint)
+		private Discovery CreateDiscovery (string s, IPEndPoint endPoint)
 		{
-			Discovery discovery = new Discovery();
+			Discovery discovery = new Discovery ();
 			StringReader sr = new StringReader (s);
 			var yes = sr.ReadLine ();
 			if (yes == "Yes?") {
-				discovery.IP = endPoint.Address.ToString();
-				discovery.WebPort = Convert.ToInt32(sr.ReadLine ());
+				discovery.IP = endPoint.Address.ToString ();
+				discovery.WebPort = Convert.ToInt32 (sr.ReadLine ());
 				discovery.Name = sr.ReadLine ();
 				discovery.MacAddress = sr.ReadLine ();
 				discovery.Version = sr.ReadLine ();
 				return discovery;
-			}
-			else
+			} else
 				return null;
+		}
+
+		void OnPropertyChanged ([CallerMemberName] string propertyName = null)
+		{
+			var handler = PropertyChanged;
+			if (handler != null) {
+				handler (this, new PropertyChangedEventArgs (propertyName));
+			}
 		}
 
 
