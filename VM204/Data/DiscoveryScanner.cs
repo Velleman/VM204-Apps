@@ -59,7 +59,7 @@ namespace VM204
 						//Creates an IPEndPoint to record the IP Address and port number of the sender.  
 						// The IPEndPoint will allow you to read datagrams sent from any source.
 						IPEndPoint RemoteIpEndPoint = new IPEndPoint (IPAddress.Any, 0);
-						while (stopwatch.ElapsedMilliseconds <= 5000) {
+						while (stopwatch.ElapsedMilliseconds <= 3000) {
 							if (udpClient.Available > 0) {
 								//IPEndPoint object will allow us to read datagrams sent from any source.
 								var receivedResults = udpClient.Receive (ref RemoteIpEndPoint);

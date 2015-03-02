@@ -72,12 +72,11 @@ namespace VM204
 
 			var activityIndicator = new ActivityIndicator ();
 			activityIndicator.SetBinding(ActivityIndicator.IsRunningProperty,"isScanning");
-			activityIndicator.SetBinding(ActivityIndicator.IsVisibleProperty,"isScanning");
+			activityIndicator.SetBinding(VisualElement.IsVisibleProperty,"isScanning");
 			activityIndicator.BindingContext = scanner;
 
-			ToolbarItem tbi = new ToolbarItem ("scan",null, () => 
-				scanner.Scan (),
-				ToolbarItemOrder.Default,0);
+			ToolbarItem tbi = new ToolbarItem ("scan", null, scanner.Scan,
+				                  ToolbarItemOrder.Default, 0);
 
 			scanner.Scan ();
 
