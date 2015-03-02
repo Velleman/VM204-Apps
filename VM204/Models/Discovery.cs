@@ -98,9 +98,10 @@ namespace VM204
 		public RelayCard ConvertToRelayCard ()
 		{
 			RelayCard card = new RelayCard ();
+			card.Name = Name;
+			card.MacAddress = MacAddress;
 			card.LocalIp = IP;
 			card.LocalPort = WebPort.ToString ();
-			card.Name = Name;
 			card.ConnectLocal = true;
 			return card;
 		}

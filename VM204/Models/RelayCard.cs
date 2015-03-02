@@ -45,6 +45,18 @@ namespace VM204
 			}
 		}
 
+		private string _macAddress;
+
+		public string MacAddress{
+			get{ return _macAddress;}
+			set {
+				if (value != _macAddress) {
+					_macAddress = value;
+					OnPropertyChanged ();
+				}
+			}
+		}
+
 		private string _localIp;
 
 		public string LocalIp {

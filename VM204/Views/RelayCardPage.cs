@@ -54,9 +54,26 @@ namespace VM204
 			};
 
 			var saveButton = new Button { Text = "Save" };
-			saveButton.Clicked += (sender, e) => {
+			saveButton.Clicked += async (sender, e) => {
 				var relayCard = (RelayCard)BindingContext;
-				App.Database.SaveCard(relayCard);
+				if(IsNewCardInDatabase(relayCard))
+				{
+					var yes = await DisplayAlert ("Duplication", "This same card is already in the list overwrite?", "Yes", "No");
+					if(yes)
+					{
+						var cards = App.Database.GetCards();
+						foreach(RelayCard c in cards)
+						{
+							if(c.MacAddress == relayCard.MacAddress)
+								relayCard.ID = c.ID;
+						}
+						App.Database.SaveCard(relayCard);
+					}
+				}
+				else
+				{
+					App.Database.SaveCard(relayCard);
+				}
 				this.Navigation.PopAsync();
 			};
 				
@@ -87,6 +104,20 @@ namespace VM204
 			};
 
 
+		}
+
+		private bool IsNewCardInDatabase(RelayCard card)
+		{
+			if (card.ID == 0) {
+				var cards = App.Database.GetCards ();
+				foreach (RelayCard c in cards) {
+					if (c.MacAddress == card.MacAddress) {
+						return true;
+					}
+				}
+				return false;
+			} else
+				return false;
 		}
 
 	}
