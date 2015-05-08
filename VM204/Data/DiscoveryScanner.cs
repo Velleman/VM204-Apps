@@ -46,9 +46,10 @@ namespace VM204
 		public void Scan ()
 		{
 			Task.Run (async () => {
-				isScanning = true;
-				using (var udpClient = new UdpClient (30303)) {
-					try {
+				this.isScanning = true;
+				try {
+					using (var udpClient = new UdpClient (30303)) {
+
 						string loggingEvent = "";
 						var bytes = System.Text.Encoding.UTF8.GetBytes ("VM204,Knock Knock\r\n");
 						udpClient.EnableBroadcast = true;
@@ -66,17 +67,21 @@ namespace VM204
 								var result = Encoding.UTF8.GetString (receivedResults);
 								var discovery = CreateDiscovery (result, RemoteIpEndPoint);
 								if (discovery != null) {
+									Device.BeginInvokeOnMainThread(()=>{
 									OnDiscoveryFound (new DiscoveryFoundEventArgs (discovery));
+									});
 								}
 								
 							}
 						}
 						stopwatch.Stop ();
-					} catch (Exception e) {
-						Insights.Report (e);
+						udpClient.Close();
 					}
+				} catch (Exception e) {
+					Insights.Report (e);
+
 				}
-				isScanning = false;
+				this.isScanning = false;
 			});
 		}
 

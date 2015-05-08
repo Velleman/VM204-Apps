@@ -19,6 +19,8 @@ namespace VM204
 			_externalIp = "";
 			_externalPort = "";
 			_connectLocal = true;
+			_login = "";
+			_password = "";
 		}
 
 		#region INotifyPropertyChanged implementation
@@ -122,6 +124,32 @@ namespace VM204
 					return;
 				}
 				_connectLocal = value;
+				OnPropertyChanged ();
+			}
+		}
+
+		private string _login;
+		public string Username{
+			get {return _login;}
+			set {
+				if (value.Equals (_login)) {
+					// Nothing to do - the value hasn't changed;
+					return;
+				}
+				_login = value;
+				OnPropertyChanged ();
+			}
+		}
+
+		private string _password;
+		public string Password{
+			get {return _password;}
+			set {
+				if (value.Equals (_password)) {
+					// Nothing to do - the value hasn't changed;
+					return;
+				}
+				_password = value;
 				OnPropertyChanged ();
 			}
 		}

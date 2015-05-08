@@ -15,6 +15,7 @@ namespace VM204.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 
+			//Initialize Insight
 			Insights.Initialize ("debc89672cad1c2f0b12316c57e0af418b2b7504");
 
 			LoadApplication (new App ());

@@ -22,10 +22,10 @@ namespace VM204
 			var webView = ((WebView)Content);
 			var relayCard = ((RelayCard)BindingContext);
 			//Connect to local or extern Ip address
-			if(relayCard.ConnectLocal)
-				webView.Source = "http://" + relayCard.LocalIp + ":" + relayCard.LocalPort;
+			if (relayCard.ConnectLocal)
+				webView.Source = "http://" + relayCard.Username + ":" + relayCard.Password+ "@" + relayCard.LocalIp + ":" + relayCard.LocalPort;
 			else
-				webView.Source = "http://" + relayCard.ExternalIp + ":" + relayCard.ExternalPort;
+				webView.Source = "http://" + relayCard.Username + ":" + relayCard.Password+ "@" + relayCard.ExternalIp + ":" + relayCard.ExternalPort;
 		}
 
 		protected override void OnDisappearing ()

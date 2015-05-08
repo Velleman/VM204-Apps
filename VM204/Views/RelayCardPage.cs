@@ -8,43 +8,74 @@ namespace VM204
 	{
 		public RelayCardPage ()
 		{
+			//Bind the name of the card to the title of the page
 			this.SetBinding (Page.TitleProperty, "Name");
 
+			//Enable NavigationBar
 			NavigationPage.SetHasNavigationBar (this, true);
 
-			//Name
-			var nameLabel = new Label{ Text = "Name" };
-			var nameEntry = new Entry ();
-			nameEntry.SetBinding (Entry.TextProperty, "Name");
-			//localIp
-			var localIpLabel = new Label{ Text = "Local IP" };
-			var localIpEntry = new Entry ();
-			localIpEntry.SetBinding (Entry.TextProperty, "LocalIp");
-			localIpEntry.Keyboard = Keyboard.Telephone;
+			// Create the Name Section
+			var nameSection = new TableSection ();
+			nameSection.Title = "Name of the card";
+			//Create the name cell and bind it to the Name 
+			var nameCell = new EntryCell ();
+			nameCell.SetBinding (EntryCell.TextProperty, "Name");
+			nameCell.Label = "Name of the Relay Card";
+			//add the name cell to the section
+			nameSection.Add(nameCell);
+			//Create the username cell and bind it to the Username 
+			var loginCell = new EntryCell ();
+			loginCell.SetBinding (EntryCell.TextProperty, "Username");
+			loginCell.Label = "Username for authentication";
+			//add the name cell to the section
+			nameSection.Add(loginCell);
+			//Create the username cell and bind it to the Username 
+			var passwordCell = new EntryCell ();
+			passwordCell.SetBinding (EntryCell.TextProperty, "Password");
+			passwordCell.Label = "Password for authentication";
+			//add the name cell to the section
+			nameSection.Add(passwordCell);
 
-			//localPort
-			var localPortLabel = new Label{ Text = "Local port"};
-			var localPortEntry = new Entry();
-			localPortEntry.SetBinding (Entry.TextProperty, "LocalPort");
-			localPortEntry.Keyboard = Keyboard.Numeric;
 
-			//externalIp
-			var externalIpLabel = new Label{ Text = "External IP" };
-			var externalIpEntry = new Entry ();
-			externalIpEntry.SetBinding (Entry.TextProperty, "ExternalIp");
-			externalIpEntry.Keyboard = Keyboard.Url;
 
-			//externalPort
-			var externalPortLabel = new Label{ Text = "External port"};
-			var externalPortEntry = new Entry();
-			externalPortEntry.SetBinding (Entry.TextProperty, "ExternalPort");
-			externalPortEntry.Keyboard = Keyboard.Numeric;
 
-			var preferLocalLabel = new Label{ Text = "Connect to local network"};
-			var preferLocalSwitch = new Switch ();
-			preferLocalSwitch.SetBinding (Xamarin.Forms.Switch.IsToggledProperty, "ConnectLocal");
+			//Local Table Section
+			var localNetworkSection = new TableSection ();
+			localNetworkSection.Title = "Local Network Settings";
+			var localIPCell = new EntryCell ();
+			localIPCell.Label = "Local IP:";
+			localIPCell.SetBinding (EntryCell.TextProperty, "LocalIp");
+			var localPortCell = new EntryCell ();
+			localPortCell.Label = "Local Port:";
+			localPortCell.SetBinding (EntryCell.TextProperty, "LocalPort");
+			localPortCell.Keyboard = Keyboard.Numeric;
+			localNetworkSection.Add (localIPCell);
+			localNetworkSection.Add (localPortCell);
 
+
+			//External Table Section
+			var externalNetworkSection = new TableSection ();
+			externalNetworkSection.Title = "Extern Network Settings";
+			var externIPCell = new EntryCell ();
+			externIPCell.Label = "External IP:";
+			externIPCell.SetBinding (EntryCell.TextProperty, "ExternalIp");
+			var externPortCell = new EntryCell ();
+			externPortCell.Label = "External Port:";
+			externPortCell.SetBinding (EntryCell.TextProperty, "ExternalPort");
+			externPortCell.Keyboard = Keyboard.Numeric;
+			externalNetworkSection.Add (externIPCell);
+			externalNetworkSection.Add (externPortCell);
+
+			var localConnectSection = new TableSection ();
+			localConnectSection.Title = "CONNECT TO LOCAL IP";
+			var localConnectCell = new SwitchCell ();
+			localConnectCell.Text = "Connect to local network first:";
+			localConnectCell.SetBinding (SwitchCell.OnProperty, "ConnectLocal");
+			localConnectSection.Add (localConnectCell);
+
+			//Create Scan Button
 			var scanButton = new Button { Text = "Scan" };
+			//
 			scanButton.Clicked += (object sender, EventArgs e) => {
 				var discoveryPage = new RelayCardDiscoveryPage ();
 
@@ -52,72 +83,51 @@ namespace VM204
 
 				Navigation.PushAsync(discoveryPage);
 			};
-
-			var saveButton = new Button { Text = "Save" };
-			saveButton.Clicked += async (sender, e) => {
-				var relayCard = (RelayCard)BindingContext;
-				if(IsNewCardInDatabase(relayCard))
-				{
-					var yes = await DisplayAlert ("Duplication", "This same card is already in the list overwrite?", "Yes", "No");
-					if(yes)
-					{
-						var cards = App.Database.GetCards();
-						foreach(RelayCard c in cards)
-						{
-							if(c.MacAddress == relayCard.MacAddress)
-								relayCard.ID = c.ID;
-						}
-						App.Database.SaveCard(relayCard);
-					}
-				}
-				else
-				{
-					App.Database.SaveCard(relayCard);
-				}
-				this.Navigation.PopAsync();
-			};
 				
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => this.Navigation.PopAsync ();
 
-	
-
-			Content = new StackLayout {
+			Content = new StackLayout{
 				VerticalOptions = LayoutOptions.StartAndExpand,
-				Padding = new Thickness(10),
 				Children = {
-					nameLabel,nameEntry,
-					localIpLabel,localIpEntry,
-					localPortLabel,localPortEntry,
-					externalIpLabel,externalIpEntry,
-					externalPortLabel,externalPortEntry,
-					preferLocalLabel,preferLocalSwitch,
-					new StackLayout {
-						Orientation = StackOrientation.Horizontal,
-						HorizontalOptions = LayoutOptions.CenterAndExpand,
-						Spacing = 50,
-						Children={
-							scanButton,saveButton, cancelButton
-						}
+				new TableView {
+				Intent = TableIntent.Form,
+				Root= new TableRoot("RelayCard"){
+					nameSection,
+					localNetworkSection,
+					externalNetworkSection,
+					localConnectSection
 					}
+					},scanButton 
 				}
 			};
 
 
 		}
 
-		private bool IsNewCardInDatabase(RelayCard card)
+		protected override void OnDisappearing ()
+		{
+			base.OnDisappearing ();
+			var card = (RelayCard)BindingContext;
+			SaveInDatabase (card);
+		}
+
+		private async void SaveInDatabase(RelayCard card)
 		{
 			if (card.ID == 0) {
 				var cards = App.Database.GetCards ();
 				foreach (RelayCard c in cards) {
 					if (c.MacAddress == card.MacAddress) {
-						return true;
+						var yes = await DisplayAlert ("Duplication", "This same card is already in the list overwrite?", "Yes", "No");
+						if (yes) {
+							card.MacAddress = c.MacAddress;
+							App.Database.SaveCard (card);
+						}
 					}
 				}
-				return false;
-			} else
-				return false;
+			} else {
+				App.Database.SaveCard (card);
+			}
 		}
 
 	}

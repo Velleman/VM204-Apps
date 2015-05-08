@@ -27,6 +27,7 @@ namespace VM204
 			ToolbarItem tbi = new ToolbarItem ("+",null,()=>{
 					var relayCard = new RelayCard();
 					var relayCardPage = new RelayCardPage();
+					App.Database.SaveCard(relayCard);
 					relayCardPage.BindingContext = relayCard;
 					Navigation.PushAsync(relayCardPage);
 			},ToolbarItemOrder.Default,0);

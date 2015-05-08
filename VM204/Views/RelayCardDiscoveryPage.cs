@@ -11,13 +11,15 @@ namespace VM204
 	public class RelayCardDiscoveryPage : ContentPage
 	{
 		ListView listView;
-		ObservableCollection<RelayCard> discoveries;
+		List<RelayCard> discoveries;
 		DiscoveryScanner scanner;
 		public RelayCard SelectedCard { get; set;}
 
 		public RelayCardDiscoveryPage ()
 		{
 			Title = "Discovery";
+
+			scanner = new DiscoveryScanner ();
 
 			listView = new ListView {
 				RowHeight = 50
@@ -29,8 +31,13 @@ namespace VM204
 			}
 			listView.ItemTemplate.SetBinding (TextCell.TextProperty, "Name");
 			listView.ItemTemplate.SetBinding (TextCell.DetailProperty, "LocalIp");
+			listView.IsPullToRefreshEnabled = true;
+			listView.Refreshing += (object sender, EventArgs e) => {
+				scanner.Scan();
+			};
 
-
+			listView.SetBinding (ListView.IsRefreshingProperty, "isScanning");
+			listView.BindingContext = scanner;
 
 			listView.ItemTapped += (object sender, ItemTappedEventArgs e) => {
 				SelectedCard = (RelayCard)e.Item;
@@ -45,11 +52,9 @@ namespace VM204
 				}	
 				Navigation.PopAsync(true);
 			};
+				
+			discoveries = new List<RelayCard> ();
 
-
-
-			discoveries = new ObservableCollection<RelayCard> ();
-			scanner = new DiscoveryScanner ();
 			scanner.DiscoveryFound += (object sender, DiscoveryFoundEventArgs e) => {
 				bool isInList = false;
 				foreach(RelayCard d in discoveries)
@@ -70,24 +75,12 @@ namespace VM204
 				}
 			};
 
-			var activityIndicator = new ActivityIndicator ();
-			activityIndicator.SetBinding(ActivityIndicator.IsRunningProperty,"isScanning");
-			activityIndicator.SetBinding(VisualElement.IsVisibleProperty,"isScanning");
-			activityIndicator.BindingContext = scanner;
-
-			ToolbarItem tbi = new ToolbarItem ("scan", null, scanner.Scan,
-				                  ToolbarItemOrder.Default, 0);
-
-			scanner.Scan ();
-
-			this.ToolbarItems.Add (tbi);
 			var layout = new StackLayout ();
-			layout.Children.Add (activityIndicator);
 			layout.Children.Add (listView);
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
-
+			scanner.Scan ();
 		}
 
 		protected override void OnAppearing ()
