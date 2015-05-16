@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Threading;
 
 namespace VM204
 {
@@ -14,6 +15,13 @@ namespace VM204
 				RowHeight = 40
 			};
 			listView.ItemTemplate = new DataTemplate (typeof(RelayCardCell));
+			listView.ItemTemplate.SetBinding (TextCell.TextProperty, "Name");
+			listView.IsPullToRefreshEnabled = true;
+
+			listView.Refreshing += (object sender, EventArgs e) => {
+				RefreshList();
+			};
+
 
 			if (Device.OS == TargetPlatform.iOS) {
 				listView.ItemsSource = new string [1]{ "" };			
@@ -27,7 +35,6 @@ namespace VM204
 			ToolbarItem tbi = new ToolbarItem ("+",null,()=>{
 					var relayCard = new RelayCard();
 					var relayCardPage = new RelayCardPage();
-					App.Database.SaveCard(relayCard);
 					relayCardPage.BindingContext = relayCard;
 					Navigation.PushAsync(relayCardPage);
 			},ToolbarItemOrder.Default,0);
@@ -40,12 +47,16 @@ namespace VM204
 		{
 			base.OnAppearing ();
 			RefreshList ();
+			App.Database.TableChanged += (object sender, SQLite.NotifyTableChangedEventArgs e) => {
+				RefreshList();
+			};
 		}
 
 		public void RefreshList()
 		{
 			listView.ItemsSource = null;
 			listView.ItemsSource = App.Database.GetCards ();
+			listView.IsRefreshing = false;
 		}
 	}
 }

@@ -22,10 +22,7 @@ namespace VM204
 			var webView = ((WebView)Content);
 			var relayCard = ((RelayCard)BindingContext);
 			//Connect to local or extern Ip address
-			if (relayCard.ConnectLocal)
-				webView.Source = "http://" + relayCard.Username + ":" + relayCard.Password+ "@" + relayCard.LocalIp + ":" + relayCard.LocalPort;
-			else
-				webView.Source = "http://" + relayCard.Username + ":" + relayCard.Password+ "@" + relayCard.ExternalIp + ":" + relayCard.ExternalPort;
+			webView.Source = UrlBuilder.GenerateUrl(relayCard);
 		}
 
 		protected override void OnDisappearing ()
@@ -33,7 +30,7 @@ namespace VM204
 			base.OnDisappearing ();
 			//set the site to google to disconnect from the relaycard
 			var webView = ((WebView)Content);
-			webView.Source="http://google.com";
+			webView.Source="";
 		}
 	}
 }

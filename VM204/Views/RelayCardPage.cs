@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Threading;
 
 
 namespace VM204
@@ -20,21 +21,21 @@ namespace VM204
 			//Create the name cell and bind it to the Name 
 			var nameCell = new EntryCell ();
 			nameCell.SetBinding (EntryCell.TextProperty, "Name");
-			nameCell.Label = "Name of the Relay Card";
+			nameCell.Label = "Name:";
 			//add the name cell to the section
-			nameSection.Add(nameCell);
+			nameSection.Add (nameCell);
 			//Create the username cell and bind it to the Username 
 			var loginCell = new EntryCell ();
 			loginCell.SetBinding (EntryCell.TextProperty, "Username");
-			loginCell.Label = "Username for authentication";
+			loginCell.Label = "Username:";
 			//add the name cell to the section
-			nameSection.Add(loginCell);
+			nameSection.Add (loginCell);
 			//Create the username cell and bind it to the Username 
 			var passwordCell = new EntryCell ();
 			passwordCell.SetBinding (EntryCell.TextProperty, "Password");
-			passwordCell.Label = "Password for authentication";
+			passwordCell.Label = "Password:";
 			//add the name cell to the section
-			nameSection.Add(passwordCell);
+			nameSection.Add (passwordCell);
 
 
 
@@ -69,7 +70,7 @@ namespace VM204
 			var localConnectSection = new TableSection ();
 			localConnectSection.Title = "CONNECT TO LOCAL IP";
 			var localConnectCell = new SwitchCell ();
-			localConnectCell.Text = "Connect to local network first:";
+			localConnectCell.Text = "Connect to local network;";
 			localConnectCell.SetBinding (SwitchCell.OnProperty, "ConnectLocal");
 			localConnectSection.Add (localConnectCell);
 
@@ -81,24 +82,24 @@ namespace VM204
 
 				discoveryPage.BindingContext = BindingContext;
 
-				Navigation.PushAsync(discoveryPage);
+				Navigation.PushAsync (discoveryPage);
 			};
 				
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => this.Navigation.PopAsync ();
 
-			Content = new StackLayout{
+			Content = new StackLayout {
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				Children = {
-				new TableView {
-				Intent = TableIntent.Form,
-				Root= new TableRoot("RelayCard"){
-					nameSection,
-					localNetworkSection,
-					externalNetworkSection,
-					localConnectSection
-					}
-					},scanButton 
+					new TableView {
+						Intent = TableIntent.Form,
+						Root = new TableRoot ("RelayCard") {
+							nameSection,
+							localNetworkSection,
+							externalNetworkSection,
+							localConnectSection
+						}
+					}, scanButton 
 				}
 			};
 
@@ -109,25 +110,28 @@ namespace VM204
 		{
 			base.OnDisappearing ();
 			var card = (RelayCard)BindingContext;
-			SaveInDatabase (card);
+			if (card.Name != null)
+				SaveInDatabase (card);
 		}
 
-		private async void SaveInDatabase(RelayCard card)
+		private async void SaveInDatabase (RelayCard card)
 		{
-			if (card.ID == 0) {
-				var cards = App.Database.GetCards ();
-				foreach (RelayCard c in cards) {
-					if (c.MacAddress == card.MacAddress) {
-						var yes = await DisplayAlert ("Duplication", "This same card is already in the list overwrite?", "Yes", "No");
-						if (yes) {
-							card.MacAddress = c.MacAddress;
-							App.Database.SaveCard (card);
-						}
-					}
-				}
+			RelayCard foundCard = null;
+			var cards = App.Database.GetCards ();
+
+			foreach (RelayCard c in cards) {
+				if (c.MacAddress == card.MacAddress) 
+					foundCard = c;
+			}
+
+			if(foundCard != null)
+			{
+				card.ID = foundCard.ID;
+				App.Database.SaveCard (card);
 			} else {
 				App.Database.SaveCard (card);
 			}
+		
 		}
 
 	}

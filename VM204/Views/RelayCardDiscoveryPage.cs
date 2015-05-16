@@ -47,7 +47,8 @@ namespace VM204
 				else
 				{
 					((RelayCard)Navigation.NavigationStack[1].BindingContext).LocalIp = SelectedCard.LocalIp;
-					((RelayCard)Navigation.NavigationStack[1].BindingContext).LocalPort = SelectedCard.LocalPort;
+					((RelayCard)Navigation.NavigationStack[1].BindingContext).LocalPort = SelectedCard.LocalPort;		
+					((RelayCard)Navigation.NavigationStack[1].BindingContext).Name = SelectedCard.Name;		
 					((RelayCard)Navigation.NavigationStack[1].BindingContext).ConnectLocal = true;
 				}	
 				Navigation.PopAsync(true);
@@ -67,10 +68,7 @@ namespace VM204
 				if(!isInList)
 				{
 					discoveries.Add(e.Card.ConvertToRelayCard());
-					if(Device.OS == TargetPlatform.iOS)
-					{
-						listView.ItemsSource = null;
-					}
+					listView.ItemsSource = null;
 					listView.ItemsSource = discoveries;
 				}
 			};

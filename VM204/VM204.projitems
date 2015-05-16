@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\RelayCardDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\UdpState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\UrlBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />

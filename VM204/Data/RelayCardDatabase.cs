@@ -13,6 +13,8 @@ namespace VM204
 
 		SQLiteConnection database;
 
+		public event EventHandler<NotifyTableChangedEventArgs> TableChanged;
+
 		string DatabasePath {
 			get { 
 				var sqliteFilename = "RelayCardSQLite.db3";
@@ -45,6 +47,13 @@ namespace VM204
 			database = new SQLiteConnection (DatabasePath);
 			// create the tables
 			database.CreateTable<RelayCard>();
+
+			database.TableChanged += (object sender, NotifyTableChangedEventArgs e) => {
+				if(TableChanged != null)
+				{
+					TableChanged(sender,e);
+				}
+			};
 		}
 
 		public IEnumerable<RelayCard> GetCards ()
